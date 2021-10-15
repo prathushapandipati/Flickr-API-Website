@@ -1,15 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
 body {
     max-width: 100vw;
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Roboto Slab', serif;
     margin: 0;
 }
 
 header {
-    background-color: rgb(24, 63, 24);
+    background-color: white;
     text-align: center;
-    color: white;
+    color: #02ae50;
     padding: 1rem;
 }
 
@@ -19,26 +18,30 @@ h1 {
 
 a {
     text-decoration: none;
-    color: white;
+    color: #02ae50;
 }
 
 #overlay {
-    background-color:#000000e5;
+    background-color: #000000e5;
     width: 100vw;
     min-height: 100vh;
     position: fixed;
     text-align: center;
     display: flex;
     flex-direction: column;
-} 
+}
 
-.overlay-fade{
+.overlay-fade {
     animation: fade .5s;
 }
 
 @keyframes fade {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 #close {
@@ -70,34 +73,35 @@ figcaption {
 
 #full-image>img {
     max-height: 80vh;
-  width: 60vw;
+    width: 60vw;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    background-color: rgb(24, 63, 24);
-
+    background-color: white;
 }
 
-#gallery #search-section{
-    background-color: #09354e;
+#gallery #search-section {
     padding-top: 2.5rem;
     padding-bottom: 1rem;
+    color: white;
+    font-weight: normal!important;
 }
 
 #search-section {
     align-self: center;
     flex-direction: column;
-    background-color: rgb(24, 63, 24);
     align-items: center;
-    color: white;
+    color: #02ae50;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 #query {
     width: 16rem;
     margin: 1rem;
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Roboto Slab', serif;
     font-size: 1rem;
     padding-left: 1rem;
     padding-top: 0.50rem;
@@ -118,7 +122,7 @@ main {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 #search-term {
@@ -132,13 +136,12 @@ main {
 
 #gallery {
     min-height: 60vh;
-    background-color: #09354e;
+    background-color: #02ae50;
     color: white;
 }
 
 #preferences {
-    display: flex;
-    text-align: center;  
+    text-align: center;
     justify-content: space-around;
 }
 
@@ -152,13 +155,13 @@ main {
 }
 
 #drop-down-list {
-    background-color: #1d1d1b;
+    background-color: #09354e;
     color: white;
     font-size: 1rem;
     border-radius: 10px;
-    padding: 0.5rem 0.5rem;
+    padding: 0.3rem 0.3rem;
     border-style: none;
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Roboto Slab', serif;
     margin-top: .3rem;
     width: min-content;
 }
@@ -184,58 +187,83 @@ main {
 #img-results {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  grid-gap: 2rem;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding: 1rem;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 1rem;
     text-align: center;
-
 }
 
 #small-img {
     margin-block-start: 0;
     margin-block-end: 0;
     margin-inline-start: 0;
-    margin-inline-end: 0; 
+    margin-inline-end: 0;
 }
 
 #small-img>img:hover {
     transform: scale(1.05);
-
     opacity: 0.5;
 }
 
 #small-img>img {
-max-width: 100%;
-object-fit: cover;
-cursor: pointer;
-height: 300px;
+    max-width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    height: 300px;
 }
 
-.copyright { 
+.copyright {
     grid-area: copyright;
-    background-color: #2E2E2E;
+    background-color: #09354e;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-    color: #555
+    color: white;
 }
-/* DESKTOP VERSION */
 
-@media screen and (min-width:480px) {
+@media screen and (min-width:769px) {
     #preferences {
+        display: flex;
         justify-content: space-evenly;
     }
-
     #img-per-page {
         padding: 1rem 2rem 0 2rem;
         font-size: 1.5rem;
         flex-direction: row;
     }
-
-    #drop-down-list{
+    #drop-down-list {
         margin-top: .3rem;
         margin-left: .3rem;
+    }
+    #gallery #search-section {
+        background-color: #02ae50;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        padding: 1rem;
+    }
+    #preferences {
+        justify-content: space-evenly;
+    }
+    #gallery {
+        grid-template-columns: 1fr;
+    }
+    #img-results {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-gap: 2rem;
+        grid-template-columns: 1fr 1fr;
+        padding: 1rem;
+        text-align: center;
+    }
+    #search-section {
+        display: flex;
+    }
+    #gallery #search-section {
+        padding: 0;
     }
 }
