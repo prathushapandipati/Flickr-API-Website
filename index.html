@@ -1,29 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flickr Website</title>
-    <link rel = "stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <section id="overlay" class="hide">
+        <figure id="close"><img src="./imgs/cross-circle.svg"></figure>
+        <figure id="full-image"></figure>
+        <figcaption></figcaption>
+    </section>
     <header>
         <a href="./index.html">
             <h1>Flickr API - Image Search</h1>
         </a>
     </header>
+    
+    <main>
+        <section id="search-section">
+            <label for="searchText">Search by categories</label>
+            <input type="text" id="query">
+            <button id="search-button">Go</button>
+        </section>
+        <section id="gallery" class="white-bg">
+            <section id="preferences">
+                <section id="img-per-page"></section>
+                <section id="search-section">
+                    <p id="search-term"></p>
+                </section>
 
-    <div id="moreinfo"></div>
-    <div class="searchForm">
-        <label for="searchText">Search by categories</label>
-        <input type="text" id="searchText">
-        <button id="searchButton">Go</button>
-    </div>
+            </section>
+            <section id="pages" class="hide">
+                <img id="back" src="./imgs/back.svg">
+                <p id="page-number"></p>
+                <img id="forward" src="./imgs/forward.svg">
+            </section>
+            <section id="img-results"></section>
+        </section>
 
-    <div id="searchedWord"></div>
+    </main>
+    <footer>
+        <div class="copyright">
+            <p>Copyright &copy 2021. All rights reserved.</p>
+        </div>
+    </footer>
 
-    <div id="container"></div>
     <script src="index.js"></script>
 </body>
+
 </html>
