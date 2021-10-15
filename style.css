@@ -83,7 +83,6 @@ main {
 }
 
 #gallery #search-section {
-    background-color: #02ae50;
     padding-top: 2.5rem;
     padding-bottom: 1rem;
     color: white;
@@ -93,7 +92,6 @@ main {
 #search-section {
     align-self: center;
     flex-direction: column;
-    background-color: white;
     align-items: center;
     color: #02ae50;
     font-size: 20px;
@@ -238,6 +236,9 @@ main {
     #drop-down-list {
         margin-top: .3rem;
         margin-left: .3rem;
+    }
+    #gallery #search-section {
+        background-color: #02ae50;
     }
 }
 
